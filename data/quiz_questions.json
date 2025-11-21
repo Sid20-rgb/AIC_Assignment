@@ -1,0 +1,19 @@
+{
+  "Square": [
+    { "question": "A square has side length 6. Find its area.", "a": 6, "b": null, "answer": 36 },
+    { "question": "A square has side 10. What is the area?", "a": 10, "b": null, "answer": 100 }
+  ],
+  "Rectangle": [
+    { "question": "A rectangle has length 4 and width 9. Find area.", "a": 4, "b": 9, "answer": 36 },
+    { "question": "Base=8, Height=6. Area?", "a": 8, "b": 6, "answer": 48 }
+  ],
+  "Triangle": [
+    { "question": "A triangle has base 10 and height 6. Area?", "a": 10, "b": 6, "answer": 30 },
+    { "question": "Base=14, Height=3. Compute area.", "a": 14, "b": 3, "answer": 21 }
+  ],
+  "Circle": [
+    { "question": "A circle has radius 7. Find the area. Use π ≈ 3.14.", "a": 7, "b": null, "answer": 153.86 },
+    { "question": "Radius = 5. Compute area.", "a": 5, "b": null, "answer": 78.5 }
+  ]
+}
+ 
