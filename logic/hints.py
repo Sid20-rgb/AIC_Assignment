@@ -6,6 +6,13 @@ def generate_hints(shape,d1,d2,student_ans,correct_area):
     except: b=None
     if shape=='Triangle': hints.append('Remember: 1/2 × base × height.')
     else: hints.append('Multiply the two dimensions.')
+    if shape == "Circle": return [
+        "Area of a circle is π × r².",
+        f"Square the radius: {a}² = {float(a)**2}",
+        f"Multiply by π (3.14159).",
+        f"Final area ≈ {correct_area}"
+    ]
+
     if student_ans is not None:
         try:
             s=float(student_ans)

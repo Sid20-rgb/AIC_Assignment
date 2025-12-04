@@ -5,6 +5,8 @@ from ui.tutor_screen import TutorScreen
 from ui.practice_screen import PracticeScreen
 from ui.dashboard_screen import DashboardScreen
 from ui.quiz_screen import QuizScreen
+from ui.shape_explorer_screen import ShapeExplorerScreen
+
 
 
 class Router(ctk.CTkFrame):
@@ -44,6 +46,9 @@ class AreaApp(ctk.CTk):
         btn_tutor = ctk.CTkButton(nav, text='Tutor', command=lambda: self.router.show('tutor')); btn_tutor.pack(pady=8, padx=10, fill='x')
         btn_practice = ctk.CTkButton(nav, text='Practice', command=lambda: self.router.show('practice')); btn_practice.pack(pady=8, padx=10, fill='x')
         btn_dash = ctk.CTkButton(nav, text='Dashboard', command=lambda: self.router.show('dashboard')); btn_dash.pack(pady=8, padx=10, fill='x')
+        btn_explorer = ctk.CTkButton(nav, text='Shapes', command=lambda: self.router.show('shape_explorer'))
+        btn_explorer.pack(pady=8, padx=10, fill='x')
+
         # router area
         self.router = Router(self)
         self.router.register('home', HomeScreen(self.router, self.router))
@@ -52,6 +57,8 @@ class AreaApp(ctk.CTk):
         self.router.register('dashboard', DashboardScreen(self.router, self.router))
         self.router.register('quiz', QuizScreen(self.router, self.router))
         self.router.show('home')
+        self.router.register('shape_explorer', ShapeExplorerScreen(self.router, self.router))
+
 
 def run_app():
     app = AreaApp()

@@ -164,6 +164,94 @@
       "student_answer": "12",
       "correct_answer": 12.0,
       "result": "correct"
+    },
+    {
+      "name": "Student",
+      "shape": "Square",
+      "dimensions": {
+        "d1": "2",
+        "d2": "3"
+      },
+      "student_answer": "21",
+      "correct_answer": 4.0,
+      "result": "incorrect"
+    },
+    {
+      "name": "Student",
+      "shape": "Rectangle",
+      "dimensions": {
+        "d1": "7",
+        "d2": "7"
+      },
+      "student_answer": "7",
+      "correct_answer": 49.0,
+      "result": "incorrect"
+    },
+    {
+      "name": "Student",
+      "shape": "Rectangle",
+      "dimensions": {
+        "d1": "7",
+        "d2": "7"
+      },
+      "student_answer": "7",
+      "correct_answer": 49.0,
+      "result": "incorrect"
+    },
+    {
+      "name": "Student",
+      "shape": "Square",
+      "dimensions": {
+        "d1": "20",
+        "d2": "20"
+      },
+      "student_answer": "40",
+      "correct_answer": 400.0,
+      "result": "incorrect"
+    },
+    {
+      "name": "Student",
+      "shape": "Rectangle",
+      "dimensions": {
+        "d1": "20",
+        "d2": "20"
+      },
+      "student_answer": "400",
+      "correct_answer": 400.0,
+      "result": "correct"
+    },
+    {
+      "name": "Student",
+      "shape": "Circle",
+      "dimensions": {
+        "d1": "20",
+        "d2": ""
+      },
+      "student_answer": "40",
+      "correct_answer": 1256.636,
+      "result": "incorrect"
+    },
+    {
+      "name": "Student",
+      "shape": "Rectangle",
+      "dimensions": {
+        "d1": "8",
+        "d2": "3"
+      },
+      "student_answer": "24",
+      "correct_answer": 24.0,
+      "result": "correct"
+    },
+    {
+      "name": "Student",
+      "shape": "Rectangle",
+      "dimensions": {
+        "d1": "8",
+        "d2": "3"
+      },
+      "student_answer": "2",
+      "correct_answer": 24.0,
+      "result": "incorrect"
     }
   ]
 }
