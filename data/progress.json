@@ -252,6 +252,50 @@
       "student_answer": "2",
       "correct_answer": 24.0,
       "result": "incorrect"
+    },
+    {
+      "name": "Student",
+      "shape": "Square",
+      "dimensions": {
+        "d1": "4",
+        "d2": "4"
+      },
+      "student_answer": "4",
+      "correct_answer": 16.0,
+      "result": "incorrect"
+    },
+    {
+      "name": "Student",
+      "shape": "Square",
+      "dimensions": {
+        "d1": "4",
+        "d2": "4"
+      },
+      "student_answer": "4",
+      "correct_answer": 16.0,
+      "result": "incorrect"
+    },
+    {
+      "name": "Student",
+      "shape": "Square",
+      "dimensions": {
+        "d1": "4",
+        "d2": "4"
+      },
+      "student_answer": "4",
+      "correct_answer": 16.0,
+      "result": "incorrect"
+    },
+    {
+      "name": "Student",
+      "shape": "Rectangle",
+      "dimensions": {
+        "d1": "8",
+        "d2": "3"
+      },
+      "student_answer": "24",
+      "correct_answer": 24.0,
+      "result": "correct"
     }
   ]
 }
