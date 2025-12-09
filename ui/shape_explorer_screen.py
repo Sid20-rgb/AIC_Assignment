@@ -1,10 +1,13 @@
 import customtkinter as ctk
 from ui.styles import COLORS, FONTS
+from ontology.ontology_loader import OntologyLoader
+
+
+OWL_PATH = "ontology/its_shape.owl"
 
 
 SHAPES = {
     "Square": {
-        "formula": "A = a²",
         "details": (
             "A square has all sides equal.\n"
             "• Opposite sides are parallel\n"
@@ -17,7 +20,6 @@ SHAPES = {
         "color": "#4FC3F7"
     },
     "Rectangle": {
-        "formula": "A = length × width",
         "details": (
             "A rectangle has opposite sides equal.\n"
             "• All angles = 90°\n"
@@ -30,7 +32,6 @@ SHAPES = {
         "color": "#81C784"
     },
     "Triangle": {
-        "formula": "A = ½ × base × height",
         "details": (
             "A triangle has 3 sides and 3 angles.\n"
             "• The height is measured perpendicular\n"
@@ -43,7 +44,6 @@ SHAPES = {
         "color": "#FFB74D"
     },
     "Circle": {
-        "formula": "A = πr²",
         "details": (
             "A circle is defined by its radius (r).\n"
             "• Diameter = 2r\n"
@@ -63,6 +63,7 @@ class ShapeExplorerScreen(ctk.CTkFrame):
         super().__init__(master, fg_color=COLORS["bg"])
         self.router = router
         self.hover_color = "#FFFFFF"
+        self.onto = OntologyLoader(OWL_PATH)  # ← Load OWL here
 
         # ---------- LEFT SIDE SHAPE LIST ----------
         self.left = ctk.CTkFrame(self, width=240, fg_color=COLORS["panel"])
@@ -94,6 +95,17 @@ class ShapeExplorerScreen(ctk.CTkFrame):
         self.formula_label = ctk.CTkLabel(self.right, text="", font=FONTS["header"], text_color=COLORS["accent"])
         self.formula_label.pack(pady=10)
 
+        # Operation selector (New)
+        self.operation_var = ctk.StringVar(value="Area")
+        self.operation_menu = ctk.CTkOptionMenu(
+            self.right,
+            values=["Area", "Perimeter"],
+            variable=self.operation_var,
+            fg_color="#1E88E5",
+            command=self.update_formula
+        )
+        self.operation_menu.pack(pady=5)
+
         self.details_label = ctk.CTkLabel(
             self.right,
             text="",
@@ -104,15 +116,14 @@ class ShapeExplorerScreen(ctk.CTkFrame):
         )
         self.details_label.pack(pady=10)
 
-        # For hover interactions
+        # Hover interactions
         self.canvas.bind("<Enter>", self.on_hover)
         self.canvas.bind("<Leave>", self.end_hover)
 
         self.current_shape = None
         self.hover_active = False
 
-
-    # ---------- HOVER EFFECT ----------
+    # ---------- Hover Effect ----------
     def on_hover(self, event):
         self.hover_active = True
         self.redraw_shape(glow=True)
@@ -121,8 +132,7 @@ class ShapeExplorerScreen(ctk.CTkFrame):
         self.hover_active = False
         self.redraw_shape(glow=False)
 
-
-    # ---------- DRAW SHAPE ----------
+    # ---------- Draw Shape ----------
     def redraw_shape(self, glow=False):
         if not self.current_shape:
             return
@@ -130,7 +140,6 @@ class ShapeExplorerScreen(ctk.CTkFrame):
         shape = self.current_shape
         base_color = SHAPES[shape]["color"]
 
-        # Lighter fill colors (valid Tkinter hex)
         fill_colors = {
             "Square": "#B3E5FC",
             "Rectangle": "#C8E6C9",
@@ -144,49 +153,36 @@ class ShapeExplorerScreen(ctk.CTkFrame):
         self.canvas.delete("all")
 
         if shape == "Square":
-            self.canvas.create_rectangle(
-                80, 40, 250, 210,
-                outline=base_color,
-                width=stroke,
-                fill=fill
-            )
+            self.canvas.create_rectangle(80, 40, 250, 210, outline=base_color, width=stroke, fill=fill)
 
         elif shape == "Rectangle":
-            self.canvas.create_rectangle(
-                70, 70, 280, 200,
-                outline=base_color,
-                width=stroke,
-                fill=fill
-            )
+            self.canvas.create_rectangle(70, 70, 280, 200, outline=base_color, width=stroke, fill=fill)
 
         elif shape == "Triangle":
-            self.canvas.create_polygon(
-                100, 200,
-                200, 50,
-                300, 200,
-                outline=base_color,
-                width=stroke,
-                fill=fill
-            )
+            self.canvas.create_polygon(100, 200, 200, 50, 300, 200, outline=base_color, width=stroke, fill=fill)
 
         elif shape == "Circle":
-            self.canvas.create_oval(
-                70, 40,
-                270, 240,
-                outline=base_color,
-                width=stroke,
-                fill=fill
-            )
+            self.canvas.create_oval(70, 40, 270, 240, outline=base_color, width=stroke, fill=fill)
 
+    # ---------- Dynamic Formula Update (OWL) ----------
+    def update_formula(self, *args):
+        if not self.current_shape:
+            return
 
-    # ---------- UPDATE SHAPE INFO ----------
+        op = self.operation_var.get()
+        formula = self.onto.get_formula(self.current_shape, op)
+        self.formula_label.configure(text=f"{op} Formula: {formula}")
+
+    # ---------- Update Shape Info ----------
     def show_shape(self, shape):
         self.current_shape = shape
 
         info = SHAPES[shape]
 
         self.title_label.configure(text=shape)
-        self.formula_label.configure(text="Formula: " + info["formula"])
         self.details_label.configure(text=info["details"])
+
+        # Fetch formula based on current operation
+        self.update_formula()
 
         self.redraw_shape(glow=False)

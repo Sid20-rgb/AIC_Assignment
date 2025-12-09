@@ -1,0 +1,404 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.example.com/ITS#"
+     xml:base="http://www.example.com/ITS"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+    <!-- ########################################################
+         ONTOLOGY
+    ######################################################### -->
+    <owl:Ontology rdf:about="http://www.example.com/ITS"/>
+
+    <!-- ########################################################
+         OBJECT PROPERTIES (Original + Quiz Added)
+    ######################################################### -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/ITS#attemptedBy">
+        <rdfs:domain rdf:resource="http://www.example.com/ITS#Session"/>
+        <rdfs:range rdf:resource="http://www.example.com/ITS#Student"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/ITS#hasOperation">
+        <rdfs:domain rdf:resource="http://www.example.com/ITS#Shape"/>
+        <rdfs:range rdf:resource="http://www.example.com/ITS#Operation"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/ITS#hasFormula">
+        <rdfs:domain rdf:resource="http://www.example.com/ITS#Operation"/>
+        <rdfs:range rdf:resource="http://www.example.com/ITS#Formula"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/ITS#hasHint">
+        <rdfs:domain rdf:resource="http://www.example.com/ITS#Operation"/>
+        <rdfs:range rdf:resource="http://www.example.com/ITS#Hint"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/ITS#usesDimension">
+        <rdfs:domain rdf:resource="http://www.example.com/ITS#Formula"/>
+        <rdfs:range rdf:resource="http://www.example.com/ITS#Dimension"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/ITS#hasShape">
+        <rdfs:domain rdf:resource="http://www.example.com/ITS#Session"/>
+        <rdfs:range rdf:resource="http://www.example.com/ITS#Shape"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/ITS#hasOperationInSession">
+        <rdfs:domain rdf:resource="http://www.example.com/ITS#Session"/>
+        <rdfs:range rdf:resource="http://www.example.com/ITS#Operation"/>
+    </owl:ObjectProperty>
+
+
+    <!-- ############################ -->
+    <!-- QUIZ OBJECT PROPERTIES ADDED -->
+    <!-- ############################ -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/ITS#hasQuiz">
+        <rdfs:domain rdf:resource="http://www.example.com/ITS#Shape"/>
+        <rdfs:range rdf:resource="http://www.example.com/ITS#Quiz"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/ITS#hasQuizQuestion">
+        <rdfs:domain rdf:resource="http://www.example.com/ITS#Quiz"/>
+        <rdfs:range rdf:resource="http://www.example.com/ITS#QuizQuestion"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/ITS#questionFromQuiz">
+        <rdfs:domain rdf:resource="http://www.example.com/ITS#QuizQuestion"/>
+        <rdfs:range rdf:resource="http://www.example.com/ITS#Quiz"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/ITS#hasQuizAttempt">
+        <rdfs:domain rdf:resource="http://www.example.com/ITS#Student"/>
+        <rdfs:range rdf:resource="http://www.example.com/ITS#QuizAttempt"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/ITS#attemptedQuizBy">
+        <rdfs:domain rdf:resource="http://www.example.com/ITS#QuizAttempt"/>
+        <rdfs:range rdf:resource="http://www.example.com/ITS#Student"/>
+    </owl:ObjectProperty>
+
+
+    <!-- ########################################################
+         DATA PROPERTIES (Original + Quiz Added)
+    ######################################################### -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/ITS#formulaText">
+        <rdfs:domain rdf:resource="http://www.example.com/ITS#Formula"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/ITS#hintText">
+        <rdfs:domain rdf:resource="http://www.example.com/ITS#Hint"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/ITS#dimensionValue">
+        <rdfs:domain rdf:resource="http://www.example.com/ITS#Dimension"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/ITS#correctAnswer">
+        <rdfs:domain rdf:resource="http://www.example.com/ITS#Session"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/ITS#studentAnswer">
+        <rdfs:domain rdf:resource="http://www.example.com/ITS#Session"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/ITS#result">
+        <rdfs:domain rdf:resource="http://www.example.com/ITS#Session"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- ############################ -->
+    <!-- QUIZ DATA PROPERTIES ADDED -->
+    <!-- ############################ -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/ITS#questionText">
+        <rdfs:domain rdf:resource="http://www.example.com/ITS#QuizQuestion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/ITS#questionCorrectAnswer">
+        <rdfs:domain rdf:resource="http://www.example.com/ITS#QuizQuestion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/ITS#correctCount">
+        <rdfs:domain rdf:resource="http://www.example.com/ITS#QuizAttempt"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/ITS#incorrectCount">
+        <rdfs:domain rdf:resource="http://www.example.com/ITS#QuizAttempt"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- ########################################################
+         CLASSES (Original + Quiz Added)
+    ######################################################### -->
+
+    <owl:Class rdf:about="http://www.example.com/ITS#Shape"/>
+    <owl:Class rdf:about="http://www.example.com/ITS#Operation"/>
+    <owl:Class rdf:about="http://www.example.com/ITS#Formula"/>
+    <owl:Class rdf:about="http://www.example.com/ITS#Dimension"/>
+    <owl:Class rdf:about="http://www.example.com/ITS#Hint"/>
+    <owl:Class rdf:about="http://www.example.com/ITS#Session"/>
+    <owl:Class rdf:about="http://www.example.com/ITS#Student"/>
+
+    <!-- Shape subclasses -->
+    <owl:Class rdf:about="http://www.example.com/ITS#Square">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/ITS#Shape"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.com/ITS#Rectangle">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/ITS#Shape"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.com/ITS#Triangle">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/ITS#Shape"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.com/ITS#Circle">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/ITS#Shape"/>
+    </owl:Class>
+
+    <!-- Operation subclasses -->
+    <owl:Class rdf:about="http://www.example.com/ITS#Area">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/ITS#Operation"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.com/ITS#Perimeter">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/ITS#Operation"/>
+    </owl:Class>
+
+    <!-- Quiz classes -->
+    <owl:Class rdf:about="http://www.example.com/ITS#Quiz"/>
+    <owl:Class rdf:about="http://www.example.com/ITS#QuizQuestion"/>
+    <owl:Class rdf:about="http://www.example.com/ITS#QuizAttempt"/>
+
+
+    <!-- ########################################################
+         INDIVIDUALS (Original + Quiz Added)
+    ######################################################### -->
+
+    <!-- Shape individuals -->
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#Square_1">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Square"/>
+        <hasOperation rdf:resource="http://www.example.com/ITS#SquareArea_Operation"/>
+        <hasOperation rdf:resource="http://www.example.com/ITS#SquarePerimeter_Operation"/>
+        <hasQuiz rdf:resource="http://www.example.com/ITS#Quiz_1"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#Rectangle_1">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Rectangle"/>
+        <hasOperation rdf:resource="http://www.example.com/ITS#RectangleArea_Operation"/>
+        <hasOperation rdf:resource="http://www.example.com/ITS#RectanglePerimeter_Operation"/>
+        <hasQuiz rdf:resource="http://www.example.com/ITS#Quiz_1"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#Triangle_1">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Triangle"/>
+        <hasOperation rdf:resource="http://www.example.com/ITS#TriangleArea_Operation"/>
+        <hasOperation rdf:resource="http://www.example.com/ITS#TrianglePerimeter_Operation"/>
+        <hasQuiz rdf:resource="http://www.example.com/ITS#Quiz_1"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#Circle_1">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Circle"/>
+        <hasOperation rdf:resource="http://www.example.com/ITS#CircleArea_Operation"/>
+        <hasOperation rdf:resource="http://www.example.com/ITS#CirclePerimeter_Operation"/>
+        <hasQuiz rdf:resource="http://www.example.com/ITS#Quiz_1"/>
+    </owl:NamedIndividual>
+
+
+    <!-- ===================================================== -->
+    <!-- INDIVIDUALS – OPERATIONS & FORMULAS & HINTS (unchanged) -->
+    <!-- ===================================================== -->
+
+    <!-- Square -->
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#SquareArea_Operation">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Area"/>
+        <hasFormula rdf:resource="http://www.example.com/ITS#SquareAreaFormula"/>
+        <hasHint rdf:resource="http://www.example.com/ITS#SquareArea_Hint"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#SquarePerimeter_Operation">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Perimeter"/>
+        <hasFormula rdf:resource="http://www.example.com/ITS#SquarePerimeterFormula"/>
+        <hasHint rdf:resource="http://www.example.com/ITS#SquarePerimeter_Hint"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#SquareAreaFormula">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Formula"/>
+        <formulaText>A = a²</formulaText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#SquarePerimeterFormula">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Formula"/>
+        <formulaText>P = 4a</formulaText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#SquareArea_Hint">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Hint"/>
+        <hintText>Square area: multiply the side by itself (a × a).</hintText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#SquarePerimeter_Hint">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Hint"/>
+        <hintText>Square perimeter: add all 4 equal sides, or use 4 × a.</hintText>
+    </owl:NamedIndividual>
+
+    <!-- Rectangle -->
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#RectangleArea_Operation">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Area"/>
+        <hasFormula rdf:resource="http://www.example.com/ITS#RectangleAreaFormula"/>
+        <hasHint rdf:resource="http://www.example.com/ITS#RectangleArea_Hint"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#RectanglePerimeter_Operation">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Perimeter"/>
+        <hasFormula rdf:resource="http://www.example.com/ITS#RectanglePerimeterFormula"/>
+        <hasHint rdf:resource="http://www.example.com/ITS#RectanglePerimeter_Hint"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#RectangleAreaFormula">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Formula"/>
+        <formulaText>A = length × width</formulaText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#RectanglePerimeterFormula">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Formula"/>
+        <formulaText>P = 2(length + width)</formulaText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#RectangleArea_Hint">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Hint"/>
+        <hintText>Rectangle area: multiply the length by the width.</hintText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#RectanglePerimeter_Hint">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Hint"/>
+        <hintText>Rectangle perimeter: add all sides or use 2 × (length + width).</hintText>
+    </owl:NamedIndividual>
+
+    <!-- Triangle -->
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#TriangleArea_Operation">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Area"/>
+        <hasFormula rdf:resource="http://www.example.com/ITS#TriangleAreaFormula"/>
+        <hasHint rdf:resource="http://www.example.com/ITS#TriangleArea_Hint"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#TrianglePerimeter_Operation">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Perimeter"/>
+        <hasFormula rdf:resource="http://www.example.com/ITS#TrianglePerimeterFormula"/>
+        <hasHint rdf:resource="http://www.example.com/ITS#TrianglePerimeter_Hint"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#TriangleAreaFormula">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Formula"/>
+        <formulaText>A = ½ × base × height</formulaText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#TrianglePerimeterFormula">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Formula"/>
+        <formulaText>P = a + b + c</formulaText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#TriangleArea_Hint">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Hint"/>
+        <hintText>Triangle area: use one-half times base times height.</hintText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#TrianglePerimeter_Hint">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Hint"/>
+        <hintText>Triangle perimeter: add the lengths of all three sides.</hintText>
+    </owl:NamedIndividual>
+
+    <!-- Circle -->
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#CircleArea_Operation">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Area"/>
+        <hasFormula rdf:resource="http://www.example.com/ITS#CircleAreaFormula"/>
+        <hasHint rdf:resource="http://www.example.com/ITS#CircleArea_Hint"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#CirclePerimeter_Operation">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Perimeter"/>
+        <hasFormula rdf:resource="http://www.example.com/ITS#CirclePerimeterFormula"/>
+        <hasHint rdf:resource="http://www.example.com/ITS#CirclePerimeter_Hint"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#CircleAreaFormula">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Formula"/>
+        <formulaText>A = πr²</formulaText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#CirclePerimeterFormula">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Formula"/>
+        <formulaText>C = 2πr</formulaText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#CircleArea_Hint">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Hint"/>
+        <hintText>Circle area: square the radius and multiply by π.</hintText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#CirclePerimeter_Hint">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Hint"/>
+        <hintText>Circle circumference: multiply 2 × π × radius.</hintText>
+    </owl:NamedIndividual>
+
+
+    <!-- ############################################ -->
+    <!-- DIMENSION + STUDENT + SESSION (unchanged) -->
+    <!-- ############################################ -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#Dimension_1">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Dimension"/>
+        <dimensionValue>5.0</dimensionValue>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#Student_1">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Student"/>
+        <hasQuizAttempt rdf:resource="http://www.example.com/ITS#QuizAttempt_1"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#Session_1">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Session"/>
+        <attemptedBy rdf:resource="http://www.example.com/ITS#Student_1"/>
+        <hasShape rdf:resource="http://www.example.com/ITS#Rectangle_1"/>
+        <hasOperationInSession rdf:resource="http://www.example.com/ITS#RectangleArea_Operation"/>
+        <studentAnswer>20.0</studentAnswer>
+        <correctAnswer>20.0</correctAnswer>
+        <result>correct</result>
+    </owl:NamedIndividual>
+
+
+    <!-- ########################################################
+         QUIZ INDIVIDUALS (ADDED)
+    ######################################################### -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#Quiz_1">
+        <rdf:type rdf:resource="http://www.example.com/ITS#Quiz"/>
+        <hasQuizQuestion rdf:resource="http://www.example.com/ITS#QuizQuestion_1"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#QuizQuestion_1">
+        <rdf:type rdf:resource="http://www.example.com/ITS#QuizQuestion"/>
+        <questionText>What is the area of a 5×4 rectangle?</questionText>
+        <questionCorrectAnswer>20</questionCorrectAnswer>
+        <questionFromQuiz rdf:resource="http://www.example.com/ITS#Quiz_1"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#QuizAttempt_1">
+        <rdf:type rdf:resource="http://www.example.com/ITS#QuizAttempt"/>
+        <attemptedQuizBy rdf:resource="http://www.example.com/ITS#Student_1"/>
+        <correctCount>1</correctCount>
+        <incorrectCount>0</incorrectCount>
+    </owl:NamedIndividual>
+
+</rdf:RDF>
