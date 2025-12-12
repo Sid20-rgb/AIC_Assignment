@@ -6,7 +6,7 @@ class OntologyLoader:
         self.graph = Graph()
         self.graph.parse(owl_path)
 
-        self.ns = Namespace("http://www.example.com/ITS#")
+        self.ns = Namespace("http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/")
 
     def get_formula(self, shape_name: str, operation: str):
 

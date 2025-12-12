@@ -36,7 +36,7 @@ class Router(ctk.CTkFrame):
 class AreaApp(ctk.CTk):
     def __init__(self):
         super().__init__()
-        self.title('Area Tutor - Fixed')
+        self.title('Shape Smart')
         self.geometry('1000x700')
         self.configure(fg_color=COLORS['bg'])
         # left navigation

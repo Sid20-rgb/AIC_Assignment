@@ -1,4 +1,4 @@
-ITS Area Tutor - Fixed package
+ITS Shape Smart package
 Location: /mnt/data/its-area-tutor-fixed
 
 Run:

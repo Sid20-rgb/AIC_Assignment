@@ -1,404 +1,696 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.example.com/ITS#"
-     xml:base="http://www.example.com/ITS"
+<rdf:RDF xmlns="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/"
+     xml:base="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart"/>
+    
 
-    <!-- ########################################################
-         ONTOLOGY
-    ######################################################### -->
-    <owl:Ontology rdf:about="http://www.example.com/ITS"/>
 
-    <!-- ########################################################
-         OBJECT PROPERTIES (Original + Quiz Added)
-    ######################################################### -->
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-    <owl:ObjectProperty rdf:about="http://www.example.com/ITS#attemptedBy">
-        <rdfs:domain rdf:resource="http://www.example.com/ITS#Session"/>
-        <rdfs:range rdf:resource="http://www.example.com/ITS#Student"/>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/attemptedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/attemptedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Session"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Student"/>
     </owl:ObjectProperty>
+    
 
-    <owl:ObjectProperty rdf:about="http://www.example.com/ITS#hasOperation">
-        <rdfs:domain rdf:resource="http://www.example.com/ITS#Shape"/>
-        <rdfs:range rdf:resource="http://www.example.com/ITS#Operation"/>
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/attemptedQuizBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/attemptedQuizBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/QuizAttempt"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Student"/>
     </owl:ObjectProperty>
+    
 
-    <owl:ObjectProperty rdf:about="http://www.example.com/ITS#hasFormula">
-        <rdfs:domain rdf:resource="http://www.example.com/ITS#Operation"/>
-        <rdfs:range rdf:resource="http://www.example.com/ITS#Formula"/>
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/hasFormula -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/hasFormula">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Operation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Formula"/>
     </owl:ObjectProperty>
+    
 
-    <owl:ObjectProperty rdf:about="http://www.example.com/ITS#hasHint">
-        <rdfs:domain rdf:resource="http://www.example.com/ITS#Operation"/>
-        <rdfs:range rdf:resource="http://www.example.com/ITS#Hint"/>
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/hasHint -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/hasHint">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Operation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Hint"/>
     </owl:ObjectProperty>
+    
 
-    <owl:ObjectProperty rdf:about="http://www.example.com/ITS#usesDimension">
-        <rdfs:domain rdf:resource="http://www.example.com/ITS#Formula"/>
-        <rdfs:range rdf:resource="http://www.example.com/ITS#Dimension"/>
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/hasOperation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/hasOperation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Shape"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Operation"/>
     </owl:ObjectProperty>
+    
 
-    <owl:ObjectProperty rdf:about="http://www.example.com/ITS#hasShape">
-        <rdfs:domain rdf:resource="http://www.example.com/ITS#Session"/>
-        <rdfs:range rdf:resource="http://www.example.com/ITS#Shape"/>
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/hasOperationInSession -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/hasOperationInSession">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Session"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Operation"/>
     </owl:ObjectProperty>
+    
 
-    <owl:ObjectProperty rdf:about="http://www.example.com/ITS#hasOperationInSession">
-        <rdfs:domain rdf:resource="http://www.example.com/ITS#Session"/>
-        <rdfs:range rdf:resource="http://www.example.com/ITS#Operation"/>
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/hasQuiz -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/hasQuiz">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Shape"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Quiz"/>
     </owl:ObjectProperty>
+    
 
 
-    <!-- ############################ -->
-    <!-- QUIZ OBJECT PROPERTIES ADDED -->
-    <!-- ############################ -->
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/hasQuizAttempt -->
 
-    <owl:ObjectProperty rdf:about="http://www.example.com/ITS#hasQuiz">
-        <rdfs:domain rdf:resource="http://www.example.com/ITS#Shape"/>
-        <rdfs:range rdf:resource="http://www.example.com/ITS#Quiz"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/hasQuizAttempt">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Student"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/QuizAttempt"/>
     </owl:ObjectProperty>
+    
 
-    <owl:ObjectProperty rdf:about="http://www.example.com/ITS#hasQuizQuestion">
-        <rdfs:domain rdf:resource="http://www.example.com/ITS#Quiz"/>
-        <rdfs:range rdf:resource="http://www.example.com/ITS#QuizQuestion"/>
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/hasQuizQuestion -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/hasQuizQuestion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Quiz"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/QuizQuestion"/>
     </owl:ObjectProperty>
+    
 
-    <owl:ObjectProperty rdf:about="http://www.example.com/ITS#questionFromQuiz">
-        <rdfs:domain rdf:resource="http://www.example.com/ITS#QuizQuestion"/>
-        <rdfs:range rdf:resource="http://www.example.com/ITS#Quiz"/>
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/hasShape -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/hasShape">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Session"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Shape"/>
     </owl:ObjectProperty>
+    
 
-    <owl:ObjectProperty rdf:about="http://www.example.com/ITS#hasQuizAttempt">
-        <rdfs:domain rdf:resource="http://www.example.com/ITS#Student"/>
-        <rdfs:range rdf:resource="http://www.example.com/ITS#QuizAttempt"/>
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/questionFromQuiz -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/questionFromQuiz">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/QuizQuestion"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Quiz"/>
     </owl:ObjectProperty>
+    
 
-    <owl:ObjectProperty rdf:about="http://www.example.com/ITS#attemptedQuizBy">
-        <rdfs:domain rdf:resource="http://www.example.com/ITS#QuizAttempt"/>
-        <rdfs:range rdf:resource="http://www.example.com/ITS#Student"/>
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/usesDimension -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/usesDimension">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Formula"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Dimension"/>
     </owl:ObjectProperty>
+    
 
 
-    <!-- ########################################################
-         DATA PROPERTIES (Original + Quiz Added)
-    ######################################################### -->
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-    <owl:DatatypeProperty rdf:about="http://www.example.com/ITS#formulaText">
-        <rdfs:domain rdf:resource="http://www.example.com/ITS#Formula"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
+    
 
-    <owl:DatatypeProperty rdf:about="http://www.example.com/ITS#hintText">
-        <rdfs:domain rdf:resource="http://www.example.com/ITS#Hint"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
 
-    <owl:DatatypeProperty rdf:about="http://www.example.com/ITS#dimensionValue">
-        <rdfs:domain rdf:resource="http://www.example.com/ITS#Dimension"/>
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/correctAnswer -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/correctAnswer">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Session"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
-
-    <owl:DatatypeProperty rdf:about="http://www.example.com/ITS#correctAnswer">
-        <rdfs:domain rdf:resource="http://www.example.com/ITS#Session"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-    </owl:DatatypeProperty>
-
-    <owl:DatatypeProperty rdf:about="http://www.example.com/ITS#studentAnswer">
-        <rdfs:domain rdf:resource="http://www.example.com/ITS#Session"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-    </owl:DatatypeProperty>
-
-    <owl:DatatypeProperty rdf:about="http://www.example.com/ITS#result">
-        <rdfs:domain rdf:resource="http://www.example.com/ITS#Session"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
+    
 
 
-    <!-- ############################ -->
-    <!-- QUIZ DATA PROPERTIES ADDED -->
-    <!-- ############################ -->
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/correctCount -->
 
-    <owl:DatatypeProperty rdf:about="http://www.example.com/ITS#questionText">
-        <rdfs:domain rdf:resource="http://www.example.com/ITS#QuizQuestion"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-
-    <owl:DatatypeProperty rdf:about="http://www.example.com/ITS#questionCorrectAnswer">
-        <rdfs:domain rdf:resource="http://www.example.com/ITS#QuizQuestion"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-    </owl:DatatypeProperty>
-
-    <owl:DatatypeProperty rdf:about="http://www.example.com/ITS#correctCount">
-        <rdfs:domain rdf:resource="http://www.example.com/ITS#QuizAttempt"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/correctCount">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/QuizAttempt"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
+    
 
-    <owl:DatatypeProperty rdf:about="http://www.example.com/ITS#incorrectCount">
-        <rdfs:domain rdf:resource="http://www.example.com/ITS#QuizAttempt"/>
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/dimensionValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/dimensionValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Dimension"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/formulaText -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/formulaText">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Formula"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/hintText -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/hintText">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Hint"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/incorrectCount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/incorrectCount">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/QuizAttempt"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
+    
 
 
-    <!-- ########################################################
-         CLASSES (Original + Quiz Added)
-    ######################################################### -->
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/questionCorrectAnswer -->
 
-    <owl:Class rdf:about="http://www.example.com/ITS#Shape"/>
-    <owl:Class rdf:about="http://www.example.com/ITS#Operation"/>
-    <owl:Class rdf:about="http://www.example.com/ITS#Formula"/>
-    <owl:Class rdf:about="http://www.example.com/ITS#Dimension"/>
-    <owl:Class rdf:about="http://www.example.com/ITS#Hint"/>
-    <owl:Class rdf:about="http://www.example.com/ITS#Session"/>
-    <owl:Class rdf:about="http://www.example.com/ITS#Student"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/questionCorrectAnswer">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/QuizQuestion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
 
-    <!-- Shape subclasses -->
-    <owl:Class rdf:about="http://www.example.com/ITS#Square">
-        <rdfs:subClassOf rdf:resource="http://www.example.com/ITS#Shape"/>
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/questionText -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/questionText">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/QuizQuestion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/result -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/result">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Session"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/studentAnswer -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/studentAnswer">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Session"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Area -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Area">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Operation"/>
     </owl:Class>
-    <owl:Class rdf:about="http://www.example.com/ITS#Rectangle">
-        <rdfs:subClassOf rdf:resource="http://www.example.com/ITS#Shape"/>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Circle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Circle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Shape"/>
     </owl:Class>
-    <owl:Class rdf:about="http://www.example.com/ITS#Triangle">
-        <rdfs:subClassOf rdf:resource="http://www.example.com/ITS#Shape"/>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Dimension -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Dimension"/>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Formula -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Formula"/>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Hint -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Hint"/>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Operation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Operation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Perimeter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Perimeter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Operation"/>
     </owl:Class>
-    <owl:Class rdf:about="http://www.example.com/ITS#Circle">
-        <rdfs:subClassOf rdf:resource="http://www.example.com/ITS#Shape"/>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Quiz -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Quiz"/>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/QuizAttempt -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/QuizAttempt"/>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/QuizQuestion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/QuizQuestion"/>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Rectangle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Rectangle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Shape"/>
     </owl:Class>
+    
 
-    <!-- Operation subclasses -->
-    <owl:Class rdf:about="http://www.example.com/ITS#Area">
-        <rdfs:subClassOf rdf:resource="http://www.example.com/ITS#Operation"/>
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Session -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Session"/>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Shape -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Shape"/>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Square -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Square">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Shape"/>
     </owl:Class>
-    <owl:Class rdf:about="http://www.example.com/ITS#Perimeter">
-        <rdfs:subClassOf rdf:resource="http://www.example.com/ITS#Operation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Student -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Student"/>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Triangle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Triangle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Shape"/>
     </owl:Class>
-
-    <!-- Quiz classes -->
-    <owl:Class rdf:about="http://www.example.com/ITS#Quiz"/>
-    <owl:Class rdf:about="http://www.example.com/ITS#QuizQuestion"/>
-    <owl:Class rdf:about="http://www.example.com/ITS#QuizAttempt"/>
+    
 
 
-    <!-- ########################################################
-         INDIVIDUALS (Original + Quiz Added)
-    ######################################################### -->
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-    <!-- Shape individuals -->
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#Square_1">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Square"/>
-        <hasOperation rdf:resource="http://www.example.com/ITS#SquareArea_Operation"/>
-        <hasOperation rdf:resource="http://www.example.com/ITS#SquarePerimeter_Operation"/>
-        <hasQuiz rdf:resource="http://www.example.com/ITS#Quiz_1"/>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#Rectangle_1">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Rectangle"/>
-        <hasOperation rdf:resource="http://www.example.com/ITS#RectangleArea_Operation"/>
-        <hasOperation rdf:resource="http://www.example.com/ITS#RectanglePerimeter_Operation"/>
-        <hasQuiz rdf:resource="http://www.example.com/ITS#Quiz_1"/>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#Triangle_1">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Triangle"/>
-        <hasOperation rdf:resource="http://www.example.com/ITS#TriangleArea_Operation"/>
-        <hasOperation rdf:resource="http://www.example.com/ITS#TrianglePerimeter_Operation"/>
-        <hasQuiz rdf:resource="http://www.example.com/ITS#Quiz_1"/>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#Circle_1">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Circle"/>
-        <hasOperation rdf:resource="http://www.example.com/ITS#CircleArea_Operation"/>
-        <hasOperation rdf:resource="http://www.example.com/ITS#CirclePerimeter_Operation"/>
-        <hasQuiz rdf:resource="http://www.example.com/ITS#Quiz_1"/>
-    </owl:NamedIndividual>
+    
 
 
-    <!-- ===================================================== -->
-    <!-- INDIVIDUALS – OPERATIONS & FORMULAS & HINTS (unchanged) -->
-    <!-- ===================================================== -->
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/CircleAreaFormula -->
 
-    <!-- Square -->
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#SquareArea_Operation">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Area"/>
-        <hasFormula rdf:resource="http://www.example.com/ITS#SquareAreaFormula"/>
-        <hasHint rdf:resource="http://www.example.com/ITS#SquareArea_Hint"/>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#SquarePerimeter_Operation">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Perimeter"/>
-        <hasFormula rdf:resource="http://www.example.com/ITS#SquarePerimeterFormula"/>
-        <hasHint rdf:resource="http://www.example.com/ITS#SquarePerimeter_Hint"/>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#SquareAreaFormula">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Formula"/>
-        <formulaText>A = a²</formulaText>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#SquarePerimeterFormula">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Formula"/>
-        <formulaText>P = 4a</formulaText>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#SquareArea_Hint">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Hint"/>
-        <hintText>Square area: multiply the side by itself (a × a).</hintText>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#SquarePerimeter_Hint">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Hint"/>
-        <hintText>Square perimeter: add all 4 equal sides, or use 4 × a.</hintText>
-    </owl:NamedIndividual>
-
-    <!-- Rectangle -->
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#RectangleArea_Operation">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Area"/>
-        <hasFormula rdf:resource="http://www.example.com/ITS#RectangleAreaFormula"/>
-        <hasHint rdf:resource="http://www.example.com/ITS#RectangleArea_Hint"/>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#RectanglePerimeter_Operation">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Perimeter"/>
-        <hasFormula rdf:resource="http://www.example.com/ITS#RectanglePerimeterFormula"/>
-        <hasHint rdf:resource="http://www.example.com/ITS#RectanglePerimeter_Hint"/>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#RectangleAreaFormula">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Formula"/>
-        <formulaText>A = length × width</formulaText>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#RectanglePerimeterFormula">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Formula"/>
-        <formulaText>P = 2(length + width)</formulaText>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#RectangleArea_Hint">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Hint"/>
-        <hintText>Rectangle area: multiply the length by the width.</hintText>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#RectanglePerimeter_Hint">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Hint"/>
-        <hintText>Rectangle perimeter: add all sides or use 2 × (length + width).</hintText>
-    </owl:NamedIndividual>
-
-    <!-- Triangle -->
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#TriangleArea_Operation">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Area"/>
-        <hasFormula rdf:resource="http://www.example.com/ITS#TriangleAreaFormula"/>
-        <hasHint rdf:resource="http://www.example.com/ITS#TriangleArea_Hint"/>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#TrianglePerimeter_Operation">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Perimeter"/>
-        <hasFormula rdf:resource="http://www.example.com/ITS#TrianglePerimeterFormula"/>
-        <hasHint rdf:resource="http://www.example.com/ITS#TrianglePerimeter_Hint"/>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#TriangleAreaFormula">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Formula"/>
-        <formulaText>A = ½ × base × height</formulaText>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#TrianglePerimeterFormula">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Formula"/>
-        <formulaText>P = a + b + c</formulaText>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#TriangleArea_Hint">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Hint"/>
-        <hintText>Triangle area: use one-half times base times height.</hintText>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#TrianglePerimeter_Hint">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Hint"/>
-        <hintText>Triangle perimeter: add the lengths of all three sides.</hintText>
-    </owl:NamedIndividual>
-
-    <!-- Circle -->
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#CircleArea_Operation">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Area"/>
-        <hasFormula rdf:resource="http://www.example.com/ITS#CircleAreaFormula"/>
-        <hasHint rdf:resource="http://www.example.com/ITS#CircleArea_Hint"/>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#CirclePerimeter_Operation">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Perimeter"/>
-        <hasFormula rdf:resource="http://www.example.com/ITS#CirclePerimeterFormula"/>
-        <hasHint rdf:resource="http://www.example.com/ITS#CirclePerimeter_Hint"/>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#CircleAreaFormula">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Formula"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/CircleAreaFormula">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Formula"/>
         <formulaText>A = πr²</formulaText>
     </owl:NamedIndividual>
+    
 
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#CirclePerimeterFormula">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Formula"/>
-        <formulaText>C = 2πr</formulaText>
-    </owl:NamedIndividual>
 
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#CircleArea_Hint">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Hint"/>
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/CircleArea_Hint -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/CircleArea_Hint">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Hint"/>
         <hintText>Circle area: square the radius and multiply by π.</hintText>
     </owl:NamedIndividual>
+    
 
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#CirclePerimeter_Hint">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Hint"/>
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/CircleArea_Operation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/CircleArea_Operation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Area"/>
+        <hasFormula rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/CircleAreaFormula"/>
+        <hasHint rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/CircleArea_Hint"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/CirclePerimeterFormula -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/CirclePerimeterFormula">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Formula"/>
+        <formulaText>C = 2πr</formulaText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/CirclePerimeter_Hint -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/CirclePerimeter_Hint">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Hint"/>
         <hintText>Circle circumference: multiply 2 × π × radius.</hintText>
     </owl:NamedIndividual>
+    
 
 
-    <!-- ############################################ -->
-    <!-- DIMENSION + STUDENT + SESSION (unchanged) -->
-    <!-- ############################################ -->
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/CirclePerimeter_Operation -->
 
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#Dimension_1">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Dimension"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/CirclePerimeter_Operation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Perimeter"/>
+        <hasFormula rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/CirclePerimeterFormula"/>
+        <hasHint rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/CirclePerimeter_Hint"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Circle_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Circle_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Circle"/>
+        <hasOperation rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/CircleArea_Operation"/>
+        <hasOperation rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/CirclePerimeter_Operation"/>
+        <hasQuiz rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Quiz_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Dimension_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Dimension_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Dimension"/>
         <dimensionValue>5.0</dimensionValue>
     </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#Student_1">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Student"/>
-        <hasQuizAttempt rdf:resource="http://www.example.com/ITS#QuizAttempt_1"/>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#Session_1">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Session"/>
-        <attemptedBy rdf:resource="http://www.example.com/ITS#Student_1"/>
-        <hasShape rdf:resource="http://www.example.com/ITS#Rectangle_1"/>
-        <hasOperationInSession rdf:resource="http://www.example.com/ITS#RectangleArea_Operation"/>
-        <studentAnswer>20.0</studentAnswer>
-        <correctAnswer>20.0</correctAnswer>
-        <result>correct</result>
-    </owl:NamedIndividual>
+    
 
 
-    <!-- ########################################################
-         QUIZ INDIVIDUALS (ADDED)
-    ######################################################### -->
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/QuizAttempt_1 -->
 
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#Quiz_1">
-        <rdf:type rdf:resource="http://www.example.com/ITS#Quiz"/>
-        <hasQuizQuestion rdf:resource="http://www.example.com/ITS#QuizQuestion_1"/>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#QuizQuestion_1">
-        <rdf:type rdf:resource="http://www.example.com/ITS#QuizQuestion"/>
-        <questionText>What is the area of a 5×4 rectangle?</questionText>
-        <questionCorrectAnswer>20</questionCorrectAnswer>
-        <questionFromQuiz rdf:resource="http://www.example.com/ITS#Quiz_1"/>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/ITS#QuizAttempt_1">
-        <rdf:type rdf:resource="http://www.example.com/ITS#QuizAttempt"/>
-        <attemptedQuizBy rdf:resource="http://www.example.com/ITS#Student_1"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/QuizAttempt_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/QuizAttempt"/>
+        <attemptedQuizBy rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Student_1"/>
         <correctCount>1</correctCount>
         <incorrectCount>0</incorrectCount>
     </owl:NamedIndividual>
+    
 
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/QuizQuestion_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/QuizQuestion_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/QuizQuestion"/>
+        <questionFromQuiz rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Quiz_1"/>
+        <questionCorrectAnswer>20</questionCorrectAnswer>
+        <questionText>What is the area of a 5×4 rectangle?</questionText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Quiz_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Quiz_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Quiz"/>
+        <hasQuizQuestion rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/QuizQuestion_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/RectangleAreaFormula -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/RectangleAreaFormula">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Formula"/>
+        <formulaText>A = length × width</formulaText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/RectangleArea_Hint -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/RectangleArea_Hint">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Hint"/>
+        <hintText>Rectangle area: multiply the length by the width.</hintText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/RectangleArea_Operation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/RectangleArea_Operation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Area"/>
+        <hasFormula rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/RectangleAreaFormula"/>
+        <hasHint rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/RectangleArea_Hint"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/RectanglePerimeterFormula -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/RectanglePerimeterFormula">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Formula"/>
+        <formulaText>P = 2(length + width)</formulaText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/RectanglePerimeter_Hint -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/RectanglePerimeter_Hint">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Hint"/>
+        <hintText>Rectangle perimeter: add all sides or use 2 × (length + width).</hintText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/RectanglePerimeter_Operation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/RectanglePerimeter_Operation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Perimeter"/>
+        <hasFormula rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/RectanglePerimeterFormula"/>
+        <hasHint rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/RectanglePerimeter_Hint"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Rectangle_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Rectangle_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Rectangle"/>
+        <hasOperation rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/RectangleArea_Operation"/>
+        <hasOperation rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/RectanglePerimeter_Operation"/>
+        <hasQuiz rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Quiz_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Session_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Session_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Session"/>
+        <attemptedBy rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Student_1"/>
+        <hasOperationInSession rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/RectangleArea_Operation"/>
+        <hasShape rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Rectangle_1"/>
+        <correctAnswer>20.0</correctAnswer>
+        <result>correct</result>
+        <studentAnswer>20.0</studentAnswer>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/SquareAreaFormula -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/SquareAreaFormula">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Formula"/>
+        <formulaText>A = a²</formulaText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/SquareArea_Hint -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/SquareArea_Hint">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Hint"/>
+        <hintText>Square area: multiply the side by itself (a × a).</hintText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/SquareArea_Operation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/SquareArea_Operation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Area"/>
+        <hasFormula rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/SquareAreaFormula"/>
+        <hasHint rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/SquareArea_Hint"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/SquarePerimeterFormula -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/SquarePerimeterFormula">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Formula"/>
+        <formulaText>P = 4a</formulaText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/SquarePerimeter_Hint -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/SquarePerimeter_Hint">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Hint"/>
+        <hintText>Square perimeter: add all 4 equal sides, or use 4 × a.</hintText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/SquarePerimeter_Operation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/SquarePerimeter_Operation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Perimeter"/>
+        <hasFormula rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/SquarePerimeterFormula"/>
+        <hasHint rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/SquarePerimeter_Hint"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Square_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Square_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Square"/>
+        <hasOperation rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/SquareArea_Operation"/>
+        <hasOperation rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/SquarePerimeter_Operation"/>
+        <hasQuiz rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Quiz_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Student_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Student_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Student"/>
+        <hasQuizAttempt rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/QuizAttempt_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/TriangleAreaFormula -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/TriangleAreaFormula">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Formula"/>
+        <formulaText>A = ½ × base × height</formulaText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/TriangleArea_Hint -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/TriangleArea_Hint">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Hint"/>
+        <hintText>Triangle area: use one-half times base times height.</hintText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/TriangleArea_Operation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/TriangleArea_Operation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Area"/>
+        <hasFormula rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/TriangleAreaFormula"/>
+        <hasHint rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/TriangleArea_Hint"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/TrianglePerimeterFormula -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/TrianglePerimeterFormula">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Formula"/>
+        <formulaText>P = a + b + c</formulaText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/TrianglePerimeter_Hint -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/TrianglePerimeter_Hint">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Hint"/>
+        <hintText>Triangle perimeter: add the lengths of all three sides.</hintText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/TrianglePerimeter_Operation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/TrianglePerimeter_Operation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Perimeter"/>
+        <hasFormula rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/TrianglePerimeterFormula"/>
+        <hasHint rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/TrianglePerimeter_Hint"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Triangle_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Triangle_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Triangle"/>
+        <hasOperation rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/TriangleArea_Operation"/>
+        <hasOperation rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/TrianglePerimeter_Operation"/>
+        <hasQuiz rdf:resource="http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/Quiz_1"/>
+    </owl:NamedIndividual>
 </rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

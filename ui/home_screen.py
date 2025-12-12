@@ -6,7 +6,7 @@ class HomeScreen(ctk.CTkFrame):
         self.router = router
         
         # Title
-        ctk.CTkLabel(self, text='Welcome to Area Tutor',
+        ctk.CTkLabel(self, text='Welcome to Shape Smart',
                      font=('Segoe UI', 30, 'bold')).pack(pady=16)
         
         # Buttons container

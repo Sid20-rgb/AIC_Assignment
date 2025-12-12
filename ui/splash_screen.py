@@ -32,7 +32,7 @@ class SplashScreen(ctk.CTkToplevel):
             image_label.pack(pady=10)
         except:
             # fallback text if image is missing
-            ctk.CTkLabel(frame, text="ITS AREA TUTOR",
+            ctk.CTkLabel(frame, text="ITS Shape Smart",
                          font=("Segoe UI", 22, "bold")).pack(pady=12)
 
         # APP TITLE

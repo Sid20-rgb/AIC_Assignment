@@ -6,7 +6,7 @@ def create_clean_graph(owl_path, output_png="ontology_clean_graph.png"):
     g = Graph()
     g.parse(owl_path)
 
-    ns = Namespace("http://www.example.com/ITS#")
+    ns = Namespace("http://www.semanticweb.org/asus/ontologies/2025/11/ITS_ShapeSmart/")
 
     allowed_predicates = {
         ns.hasOperation,
