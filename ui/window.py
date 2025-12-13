@@ -1,3 +1,4 @@
+import os
 import customtkinter as ctk
 from ui.styles import COLORS, FONTS
 from ui.home_screen import HomeScreen
@@ -6,6 +7,7 @@ from ui.practice_screen import PracticeScreen
 from ui.dashboard_screen import DashboardScreen
 from ui.quiz_screen import QuizScreen
 from ui.shape_explorer_screen import ShapeExplorerScreen
+import tkinter as tk
 
 
 
@@ -39,6 +41,13 @@ class AreaApp(ctk.CTk):
         self.title('Shape Smart')
         self.geometry('1000x700')
         self.configure(fg_color=COLORS['bg'])
+        
+        icon_path = os.path.join(
+            os.path.dirname(__file__),
+            "..", "assets", "icons", "appLogo.ico"
+        )
+        self.iconbitmap(icon_path)
+          
         # left navigation
         nav = ctk.CTkFrame(self, width=180, fg_color=COLORS['panel'], corner_radius=8)
         nav.pack(side='left', fill='y', padx=12, pady=12)
