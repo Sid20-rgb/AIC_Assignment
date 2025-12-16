@@ -1,7 +1,6 @@
 def generate_hints(shape, d1, d2, student_ans, correct_value, calc_type="Area"):
     hints = []
 
-    # convert inputs
     try: a = float(d1)
     except: a = None
     try: b = float(d2) if d2 != '' else None

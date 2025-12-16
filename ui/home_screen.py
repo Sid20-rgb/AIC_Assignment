@@ -5,21 +5,21 @@ class HomeScreen(ctk.CTkFrame):
         super().__init__(master, fg_color='transparent')
         self.router = router
         
-        # Title
+       
         ctk.CTkLabel(self, text='Welcome to Shape Smart',
                      font=('Segoe UI', 30, 'bold')).pack(pady=16)
         
-        # Buttons container
+       
         btn_frame = ctk.CTkFrame(self, fg_color='transparent')
         btn_frame.pack(pady=20)
 
-        # Button properties
+    
         button_font = ('Segoe UI', 18)
         button_width = 200
         button_height = 200
-        button_corner_radius = 20  # curvy edges
+        button_corner_radius = 20  
 
-        # Define buttons and their actions
+      
         buttons = [
             ("Start Tutor", lambda: router.show('tutor')),
             ("Practice", lambda: router.show('practice')),
@@ -27,7 +27,7 @@ class HomeScreen(ctk.CTkFrame):
             ("Quiz", lambda: router.show('quiz'))
         ]
 
-        # Place buttons in grid: 2 columns
+        
         for idx, (text, cmd) in enumerate(buttons):
             row = idx // 2
             col = idx % 2

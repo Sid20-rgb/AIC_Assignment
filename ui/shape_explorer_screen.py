@@ -63,7 +63,7 @@ class ShapeExplorerScreen(ctk.CTkFrame):
         super().__init__(master, fg_color=COLORS["bg"])
         self.router = router
         self.hover_color = "#FFFFFF"
-        self.onto = OntologyLoader(OWL_PATH)  # ← Load OWL here
+        self.onto = OntologyLoader(OWL_PATH)
 
         # ---------- LEFT SIDE SHAPE LIST ----------
         self.left = ctk.CTkFrame(self, width=240, fg_color=COLORS["panel"])
@@ -95,7 +95,7 @@ class ShapeExplorerScreen(ctk.CTkFrame):
         self.formula_label = ctk.CTkLabel(self.right, text="", font=FONTS["header"], text_color=COLORS["accent"])
         self.formula_label.pack(pady=10)
 
-        # Operation selector (New)
+        
         self.operation_var = ctk.StringVar(value="Area")
         self.operation_menu = ctk.CTkOptionMenu(
             self.right,
@@ -116,14 +116,14 @@ class ShapeExplorerScreen(ctk.CTkFrame):
         )
         self.details_label.pack(pady=10)
 
-        # Hover interactions
+     
         self.canvas.bind("<Enter>", self.on_hover)
         self.canvas.bind("<Leave>", self.end_hover)
 
         self.current_shape = None
         self.hover_active = False
 
-    # ---------- Hover Effect ----------
+
     def on_hover(self, event):
         self.hover_active = True
         self.redraw_shape(glow=True)
@@ -132,7 +132,7 @@ class ShapeExplorerScreen(ctk.CTkFrame):
         self.hover_active = False
         self.redraw_shape(glow=False)
 
-    # ---------- Draw Shape ----------
+ 
     def redraw_shape(self, glow=False):
         if not self.current_shape:
             return
@@ -173,7 +173,7 @@ class ShapeExplorerScreen(ctk.CTkFrame):
         formula = self.onto.get_formula(self.current_shape, op)
         self.formula_label.configure(text=f"{op} Formula: {formula}")
 
-    # ---------- Update Shape Info ----------
+    
     def show_shape(self, shape):
         self.current_shape = shape
 
@@ -182,7 +182,7 @@ class ShapeExplorerScreen(ctk.CTkFrame):
         self.title_label.configure(text=shape)
         self.details_label.configure(text=info["details"])
 
-        # Fetch formula based on current operation
+       
         self.update_formula()
 
         self.redraw_shape(glow=False)

@@ -26,10 +26,10 @@ class Router(ctk.CTkFrame):
         self.screens[name].pack(fill='both', expand=True, padx=12, pady=12)
 
     def show_tutor(self, shape=None):
-        # Navigate to tutor screen
+      
         self.show("tutor")
 
-        # If quiz detected a weak shape → update tutor UI
+     
         tutor_screen = self.screens.get("tutor")
         if shape and tutor_screen:
             tutor_screen.set_shape(shape)
@@ -47,8 +47,7 @@ class AreaApp(ctk.CTk):
             "..", "assets", "icons", "appLogo.ico"
         )
         self.iconbitmap(icon_path)
-          
-        # left navigation
+  
         nav = ctk.CTkFrame(self, width=180, fg_color=COLORS['panel'], corner_radius=8)
         nav.pack(side='left', fill='y', padx=12, pady=12)
         btn_home = ctk.CTkButton(nav, text='Home', command=lambda: self.router.show('home')); btn_home.pack(pady=8, padx=10, fill='x')
@@ -58,7 +57,7 @@ class AreaApp(ctk.CTk):
         btn_explorer = ctk.CTkButton(nav, text='Shapes', command=lambda: self.router.show('shape_explorer'))
         btn_explorer.pack(pady=8, padx=10, fill='x')
 
-        # router area
+ 
         self.router = Router(self)
         self.router.register('home', HomeScreen(self.router, self.router))
         self.router.register('tutor', TutorScreen(self.router, self.router))

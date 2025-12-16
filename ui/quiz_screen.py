@@ -49,7 +49,7 @@ class QuizScreen(ctk.CTkFrame):
     def submit(self):
         shape = self.current_shape.get()
 
-        # ✅ Prevent going past last question
+       
         if self.index >= len(self.questions[shape]):
             return
 
@@ -66,7 +66,7 @@ class QuizScreen(ctk.CTkFrame):
 
         self.index += 1
 
-        # ✅ Finished quiz?
+     
         if self.index >= len(self.questions[shape]):
             self.feedback.insert("end", "\n=== Quiz Finished ===\n")
             weak_shape = self.detect_weak_shape()
@@ -88,10 +88,10 @@ class QuizScreen(ctk.CTkFrame):
         return None
     
     def show_tutor(self, shape=None):
-        frame = self.frames["Tutor"]  # Your Tutor screen instance
+        frame = self.frames["Tutor"]  
 
         if shape is not None:
-        # Set shape before showing the screen
+        
             frame.shape.set(shape)
 
         self.show_frame("Tutor")

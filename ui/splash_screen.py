@@ -7,7 +7,7 @@ class SplashScreen(ctk.CTkToplevel):
 
         self.on_finish = on_finish
 
-        # Window: borderless and centered
+     
         self.overrideredirect(True)
         w, h = 450, 320
         x = (self.winfo_screenwidth() // 2) - (w // 2)
@@ -16,13 +16,11 @@ class SplashScreen(ctk.CTkToplevel):
 
         ctk.set_appearance_mode("dark")
 
-        # Background frame
+     
         frame = ctk.CTkFrame(self, fg_color="#0a0a0a", corner_radius=12)
         frame.pack(fill="both", expand=True)
 
-        # -------------------------------
-        # LOGO IMAGE
-        # -------------------------------
+       
         try:
             img = Image.open(logo_path)
             img = img.resize((160, 160))
@@ -31,24 +29,24 @@ class SplashScreen(ctk.CTkToplevel):
             image_label = ctk.CTkLabel(frame, text="", image=self.logo)
             image_label.pack(pady=10)
         except:
-            # fallback text if image is missing
+           
             ctk.CTkLabel(frame, text="ITS Shape Smart",
                          font=("Segoe UI", 22, "bold")).pack(pady=12)
 
-        # APP TITLE
+     
         ctk.CTkLabel(
             frame,
             text="Loading, please wait...",
             font=("Segoe UI", 16)
         ).pack(pady=8)
 
-        # Progress Bar
+      
         self.progress = ctk.CTkProgressBar(frame, width=260)
         self.progress.pack(pady=20)
         self.progress.set(0)
         self.progress_val = 0
 
-        # Start progress animation
+ 
         self.animate_progress()
 
     def animate_progress(self):

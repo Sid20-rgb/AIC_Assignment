@@ -2,18 +2,17 @@ import customtkinter as ctk
 from PIL import Image
 
 class BackgroundMixin:
-    _bg_loaded = False  # prevents double-loading
+    _bg_loaded = False  
 
     def load_background(self, image_path):
         self._bg_image_path = image_path
-        self.bind("<Map>", self._load_bg_once)  # load when widget is mapped
+        self.bind("<Map>", self._load_bg_once)  
 
     def _load_bg_once(self, event=None):
         if self._bg_loaded: 
             return
         self._bg_loaded = True
 
-        # Real background loading happens HERE
         self._bg_image_pil = Image.open(self._bg_image_path)
         self._bg_image = ctk.CTkImage(self._bg_image_pil, size=(1400, 900))
 

@@ -11,7 +11,7 @@ class TutorScreen(ctk.CTkFrame):
 
         ctk.CTkLabel(self, text='Tutor', font=('Segoe UI',16,'bold')).pack(anchor='w', pady=(6,4))
 
-        # shape dropdown
+        
         self.shape = ctk.StringVar(value='Square')
         self.shape_menu = ctk.CTkOptionMenu(
             self, values=['Square','Rectangle','Triangle','Circle'],
@@ -20,7 +20,7 @@ class TutorScreen(ctk.CTkFrame):
         )
         self.shape_menu.pack(pady=6)
 
-        # ✅ Add Area/Perimeter option menu here
+       
         self.calc_type = ctk.StringVar(value='Area')
         self.calc_menu = ctk.CTkOptionMenu(
             self,
@@ -29,7 +29,7 @@ class TutorScreen(ctk.CTkFrame):
         )
         self.calc_menu.pack(pady=6)
         
-        # ------- INPUT AREA USING GRID (stable layout) -------
+      
         self.input_frame = ctk.CTkFrame(self, fg_color="transparent")
         self.input_frame.pack(pady=10)
 
@@ -41,13 +41,12 @@ class TutorScreen(ctk.CTkFrame):
 
         self.d3 = LabeledEntry(self.input_frame, 'Side C:')
         self.d3.grid(row=2, column=0, pady=6)
-        self.d3.grid_remove()   # hidden by default
+        self.d3.grid_remove()   
 
 
         self.ans = LabeledEntry(self.input_frame, 'Your computed area/perimeter:')
         self.ans.grid(row=3, column=0, pady=6)
 
-        # Buttons
         btn_frame = ctk.CTkFrame(self, fg_color='transparent')
         btn_frame.pack(pady=6)
         IconButton(btn_frame, text='Calculate', command=self.calculate,
@@ -63,9 +62,7 @@ class TutorScreen(ctk.CTkFrame):
         # Initial layout update
         self.update_fields("Square")
 
-    # ---------------------------------------------------------
-    #       SHAPE UPDATE (circle hides D2 correctly)
-    # ---------------------------------------------------------
+    
     def on_shape_change(self, value):
         self.update_fields(value)
 
@@ -73,26 +70,24 @@ class TutorScreen(ctk.CTkFrame):
         """Update visible fields depending on chosen shape, using GRID."""
         calc_type = self.calc_type.get()
 
-        # RESET labels
+      
         self.d1.label.configure(text="Side / Length / Base:")
         self.d2.label.configure(text="Width / Height:")
         self.d3.grid_remove()
         if shape == "Circle":
             self.d1.label.configure(text="Radius:")
-            self.d2.grid_remove()     # cleanly hide row 1
+            self.d2.grid_remove()     
         else:
             self.d1.label.configure(text="Side / Length / Base:")
-            self.d2.grid()            # restore row 1 (never moves)
+            self.d2.grid()         
 
-        # Clear all entry boxes and feedback
+    
         self.d1.entry.delete(0, "end")
         self.d2.entry.delete(0, "end")
         self.ans.entry.delete(0, "end")
         self.feedback.delete("1.0", "end")
 
-    # ---------------------------------------------------------
-    #               AREA CALCULATION
-    # ---------------------------------------------------------
+  
     def calculate(self):
         shape = self.shape.get()
         a = self.d1.get().strip()
@@ -112,9 +107,7 @@ class TutorScreen(ctk.CTkFrame):
             self.feedback.insert('end', f"{self.calc_type.get()}: {value}\n")
 
 
-    # ---------------------------------------------------------
-    #               CHECK ANSWER
-    # ---------------------------------------------------------
+
     def check(self):
         a = self.d1.get().strip()
         b = self.d2.get().strip()
@@ -123,7 +116,7 @@ class TutorScreen(ctk.CTkFrame):
 
         from logic.evaluator import grade_answer
 
-        # Decide which calculation we are checking
+     
         calc_type = self.calc_type.get()
 
         if calc_type == "Area":
@@ -135,7 +128,7 @@ class TutorScreen(ctk.CTkFrame):
             self.feedback.insert('end', "Enter valid dimensions\n")
             return
 
-        # Evaluate correctness
+     
         try:
             student_val = float(ans)
             is_correct = abs(student_val - correct_value) < 0.0001
@@ -149,7 +142,7 @@ class TutorScreen(ctk.CTkFrame):
         else:
             self.feedback.insert('end', f"❌ Not correct.\nCorrect {calc_type.lower()}: {correct_value}\n")
 
-            # NOW perimeter hints will show correctly
+           
             hints = generate_hints(shape, a, b, ans, correct_value, calc_type)
 
             for i, hint in enumerate(hints, start=1):
@@ -163,7 +156,7 @@ class TutorScreen(ctk.CTkFrame):
         shape = self.shape.get()
         calc_type = self.calc_type.get()
 
-        # compute correct value based on selected calc type
+    
         if calc_type == "Area":
             correct_value, _ = compute_area(shape, a, b)
         else:

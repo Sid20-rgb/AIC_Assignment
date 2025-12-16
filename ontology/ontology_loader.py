@@ -10,7 +10,7 @@ class OntologyLoader:
 
     def get_formula(self, shape_name: str, operation: str):
 
-        shape_uri = self.ns[f"{shape_name}_1"]   # e.g., Square_1
+        shape_uri = self.ns[f"{shape_name}_1"]  
         op_uri = self.ns[f"{shape_name}{operation}_Operation"]
 
         if (shape_uri, self.ns.hasOperation, op_uri) not in self.graph:
